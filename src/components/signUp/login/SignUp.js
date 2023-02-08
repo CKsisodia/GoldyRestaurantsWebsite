@@ -37,10 +37,10 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="body">
-        <div className="container" id="container">
-          <div className="form-container log-in-container">
-            <form>
+      <div className="body_signupForm">
+        <div className="container_signupForm" id="container">
+          <div className="form-container_signupForm log-in-container_signupForm">
+            <form className="form_signupForm">
               <h1>Sign Up</h1>
               <input
                 type="email"
@@ -56,17 +56,15 @@ const SignUp = () => {
               />
               <button onClick={createAccountHanndler}>Create Account</button>
 
-              <div className="newUserSignUp">
-                <p>Already have an Account?</p>
-                <div className="log_in" onClick={loginNavigateHandler}>
-                  Log in
-                </div>
+              <p>Already have an Account?</p>
+              <div className="log_in_signupForm" onClick={loginNavigateHandler}>
+                Log in
               </div>
             </form>
           </div>
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className="overlay-panel overlay-right">
+          <div className="overlay-container_signupForm">
+            <div className="overlay_signupForm">
+              <div className="overlay-panel_signupForm overlay-right_signupForm">
                 <h1>Welcome! to SignUp Form</h1>
                 <p>Please Enter Your Details.</p>
               </div>

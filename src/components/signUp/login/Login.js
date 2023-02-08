@@ -59,10 +59,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="body">
-        <div className="container" id="container">
-          <div className="form-container log-in-container">
-            <form>
+      <div className="body_login">
+        <div className="container_login" id="container">
+          <div className="form-container_login log-in-container_1">
+            <form className='form_login'>
               <h1>Login</h1>
               <input
                 type="email"
@@ -91,9 +91,9 @@ const Login = () => {
               </div>
             </form>
           </div>
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className="overlay-panel overlay-right">
+          <div className="overlay-container_login">
+            <div className="overlay_login">
+              <div className="overlay-panel_login overlay-right_login">
                 <h1>Welcome! to Login Form</h1>
                 <p>Please Enter Your Details.</p>
               </div>

@@ -4,6 +4,7 @@ import {
   getUserDataAction,
   logInUserAction,
   signUpUserAction,
+  updateUserProfileAction,
 } from "./asyncUserReducer";
 
 const userSlice = createSlice({
@@ -29,6 +30,7 @@ const userSlice = createSlice({
       console.log(6, action.payload);
       state.userProfileData = action.payload;
     });
+    builder.addCase(updateUserProfileAction.fulfilled, (state, action) => {});
   },
 });
 

@@ -4,21 +4,20 @@
 	box-sizing: border-box;
 }
 
-body {
-	background: #f3e0e2;
+.body_signupForm {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -20px 0 50px;
+	margin: -80px 0 50px;
 }
 
-h1 {
+.form_signupForm h1 {
 	font-weight: bold;
 	margin: 0;
-	margin-bottom: 30px;
+	margin-bottom: 3 0px;
 }
 
 p {
@@ -29,12 +28,12 @@ p {
 	margin: 20px 0 30px;
 }
 
-.log_in{
+.log_in_signupForm{
 	color: #ee2faee3;
 	cursor: pointer;
 }
 
-button {
+.form_signupForm button {
 	border-radius: 20px;
 	border: 1px solid #219453;
 	background-color: #219453;
@@ -48,7 +47,7 @@ button {
 	margin-top: 20px;
 }
 
-form {
+.form_signupForm {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -59,7 +58,7 @@ form {
 	text-align: center;
 }
 
-input {
+.form_signupForm input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -67,7 +66,7 @@ input {
 	width: 100%;
 }
 
-.container {
+.container_signupForm {
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -78,19 +77,19 @@ input {
 	min-height: 480px;
 }
 
-.form-container {
+.form-container_signupForm {
 	position: absolute;
 	top: 0;
 	height: 100%;
 }
 
-.log-in-container {
+.log-in-container_signupForm {
 	left: 0;
 	width: 50%;
 	z-index: 2;
 }
 
-.overlay-container {
+.overlay-container_signupForm {
 	position: absolute;
 	top: 0;
 	left: 50%;
@@ -98,7 +97,7 @@ input {
 	height: 100%;
 }
 
-.overlay {
+.overlay_signupForm {
 	background: #74ff41;
 	background: linear-gradient(to right, #2fa95e, #a3c53c);
 	background-repeat: no-repeat;
@@ -111,7 +110,7 @@ input {
 	width: 200%;
 }
 
-.overlay-panel {
+.overlay-panel_signupForm {
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -124,6 +123,6 @@ input {
 	width: 50%;
 }
 
-.overlay-right {
+.overlay-right_signupForm {
 	right: 0;
 }

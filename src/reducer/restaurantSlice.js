@@ -60,25 +60,53 @@ const restaurantSlice = createSlice({
 
       if (state.cartItems.length === 0) {
         state.cartItems.push(itemObj);
+        console.log(JSON.parse(JSON.stringify(state.cartItems)));
       } else {
         const objIndex = state.cartItems.findIndex(
           (item) => item.id === itemObj.id
         );
         if (objIndex === -1) {
           state.cartItems.push(itemObj);
+          console.log(JSON.parse(JSON.stringify(state.cartItems)));
         } else {
           state.cartItems[objIndex].quantity += 1;
+          console.log(JSON.parse(JSON.stringify(state.cartItems)));
         }
       }
     },
     decrement(state, action) {
-      // const itemObj = action.payload;
-      // console.log(itemObj);
-      // const index = state.restaurantList.findIndex(
-      //   (item) => item.id === itemObj.id
-      // );
-      // console.log(index);
-      // state.restaurantList[index].quantity -= 1;
+      const itemObjOld = action.payload;
+      const itemObj = { ...itemObjOld, quantity: 1 };
+      const index = state.restaurantList.findIndex(
+        (item) => item.id === itemObj.id
+      );
+
+      state.restaurantList[index].quantity -= 1;
+
+      if (state.cartItems.length > 0) {
+        console.log(JSON.parse(JSON.stringify(state.cartItems)));
+
+        const objIndex = state.cartItems.findIndex(
+          (item) => item.id === itemObj.id
+        );
+
+        state.cartItems[objIndex].quantity -= 1;
+
+        console.log(JSON.parse(JSON.stringify(state.cartItems)));
+        console.log(objIndex);
+
+
+         if(state.cartItems[objIndex].quantity === 1){
+
+          const decreaseQuantity =   state.cartItems.filter((item)=> item.id !== objIndex.id);
+          console.log(JSON.parse(JSON.stringify(decreaseQuantity)));
+
+          
+
+         }
+         
+
+      }
     },
   },
 });

@@ -13,6 +13,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import FoodBankIcon from "@mui/icons-material/FoodBank";
 
 export default function RestaurantAppBar() {
   const navigate = useNavigate();
@@ -42,6 +43,11 @@ export default function RestaurantAppBar() {
 
   const loginHandler = () => {
     navigate("/login");
+  };
+
+  const profileFormHandler = () => {
+    navigate("/profileForm");
+    handleMenuClose();
   };
 
   const handleProfileMenuOpen = (event) => {
@@ -78,7 +84,7 @@ export default function RestaurantAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={profileFormHandler}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
@@ -122,7 +128,6 @@ export default function RestaurantAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -136,8 +141,16 @@ export default function RestaurantAppBar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
-          ></IconButton>
+          >
+            <FoodBankIcon
+              sx={{
+                fontSize: 40,
+                backgroundColor: "#e6e600",
+                color: "black",
+                borderRadius: "20px",
+              }}
+            />
+          </IconButton>
           <Typography
             variant="h6"
             noWrap
@@ -146,11 +159,13 @@ export default function RestaurantAppBar() {
             sx={{
               display: { xs: "none", sm: "block" },
               fontSize: 40,
-              color: "yellow",
+              color: "#e6e600",
               cursor: "pointer",
+              fontFamily: "cursive",
+              fontWeight: 700,
             }}
           >
-            Food Yog {userProfileData !== undefined && "Welcome" + email}
+            Food Yog {userProfileData !== undefined && "Welcome " + email}
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
@@ -172,10 +187,11 @@ export default function RestaurantAppBar() {
               onClick={loginHandler}
               sx={{
                 fontSize: 20,
-                color: "yellow",
+                color: "#e6e600",
+                fontWeight: 700,
               }}
             >
-              Sign in
+              Log in
             </Button>
             <IconButton
               size="large"

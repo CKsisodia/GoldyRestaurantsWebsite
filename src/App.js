@@ -7,6 +7,7 @@ import Login from "./components/signUp/login/Login";
 import SignUp from "./components/signUp/login/SignUp";
 import { getUserDataAction } from "./reducer/asyncUserReducer";
 import { useSelector } from "react-redux";
+import ProfileForm from "./components/ProfileForm";
 
 function App() {
   const userLogInData = useSelector((state) => state.user.userLogInData);
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     if (userLogInData === undefined) {
-      console.log(1)
+      console.log(1);
       dispatch(getUserDataAction());
     } else return;
   }, []);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/menulist" element={<MenuList />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/profileForm" element={<ProfileForm />}></Route>
       </Routes>
     </div>
   );

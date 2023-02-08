@@ -105,6 +105,31 @@ class ApiUserService {
       return data;
     }
   };
+
+
+  updateUserProfile = async (credentials) => {
+    const idToken = localStorage.getItem("idToken");
+    const response = await fetch(
+      this.BASE_URL + "update?key=AIzaSyDlZ2kuJ2xqKXRzBLAS8Wvz7wLDzDDIdgU",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          idToken:idToken,
+          displayName: credentials.userName,
+          photoUrl: credentials.photoUrl,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } 
+  };
+
 }
 
 export const apiUserService = ApiUserService.getInstance();
